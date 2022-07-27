@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6B12BA8528902CF000757D08 /* Tile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B12BA8428902CF000757D08 /* Tile.swift */; };
+		6B12BA882890425600757D08 /* PayBackAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B12BA872890425600757D08 /* PayBackAPI.swift */; };
+		6B12BA8A2890428900757D08 /* Routes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B12BA892890428900757D08 /* Routes.swift */; };
+		6B12BA8C2890438E00757D08 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B12BA8B2890438E00757D08 /* Request.swift */; };
+		6B12BA8E289043A600757D08 /* Reachbility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B12BA8D289043A600757D08 /* Reachbility.swift */; };
+		6B12BA90289043EF00757D08 /* RequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B12BA8F289043EF00757D08 /* RequestManager.swift */; };
+		6B12BA9228906D9000757D08 /* ContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B12BA9128906D9000757D08 /* ContentViewModel.swift */; };
+		6B12BA94289070C400757D08 /* TileList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B12BA93289070C400757D08 /* TileList.swift */; };
 		6BD6F4C62890224900F2E325 /* Payback_assignmentApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BD6F4C52890224900F2E325 /* Payback_assignmentApp.swift */; };
 		6BD6F4C82890224900F2E325 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BD6F4C72890224900F2E325 /* ContentView.swift */; };
 		6BD6F4CA2890224900F2E325 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6BD6F4C92890224900F2E325 /* Assets.xcassets */; };
@@ -36,6 +44,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6B12BA8428902CF000757D08 /* Tile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tile.swift; sourceTree = "<group>"; };
+		6B12BA872890425600757D08 /* PayBackAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayBackAPI.swift; sourceTree = "<group>"; };
+		6B12BA892890428900757D08 /* Routes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Routes.swift; sourceTree = "<group>"; };
+		6B12BA8B2890438E00757D08 /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
+		6B12BA8D289043A600757D08 /* Reachbility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachbility.swift; sourceTree = "<group>"; };
+		6B12BA8F289043EF00757D08 /* RequestManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestManager.swift; sourceTree = "<group>"; };
+		6B12BA9128906D9000757D08 /* ContentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewModel.swift; sourceTree = "<group>"; };
+		6B12BA93289070C400757D08 /* TileList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TileList.swift; sourceTree = "<group>"; };
 		6BD6F4C22890224900F2E325 /* Payback_assignment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Payback_assignment.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6BD6F4C52890224900F2E325 /* Payback_assignmentApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Payback_assignmentApp.swift; sourceTree = "<group>"; };
 		6BD6F4C72890224900F2E325 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -75,6 +91,44 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6B12BA8128902CA900757D08 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				6B12BA8428902CF000757D08 /* Tile.swift */,
+				6B12BA93289070C400757D08 /* TileList.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		6B12BA8228902CB600757D08 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				6B12BA9128906D9000757D08 /* ContentViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		6B12BA8328902CC800757D08 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				6BD6F4C72890224900F2E325 /* ContentView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		6B12BA86289040E600757D08 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				6B12BA872890425600757D08 /* PayBackAPI.swift */,
+				6B12BA892890428900757D08 /* Routes.swift */,
+				6B12BA8B2890438E00757D08 /* Request.swift */,
+				6B12BA8D289043A600757D08 /* Reachbility.swift */,
+				6B12BA8F289043EF00757D08 /* RequestManager.swift */,
+				6BD6F4CE2890224900F2E325 /* Persistence.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
 		6BD6F4B92890224900F2E325 = {
 			isa = PBXGroup;
 			children = (
@@ -99,9 +153,11 @@
 			isa = PBXGroup;
 			children = (
 				6BD6F4C52890224900F2E325 /* Payback_assignmentApp.swift */,
-				6BD6F4C72890224900F2E325 /* ContentView.swift */,
+				6B12BA86289040E600757D08 /* Service */,
+				6B12BA8328902CC800757D08 /* View */,
+				6B12BA8228902CB600757D08 /* ViewModel */,
+				6B12BA8128902CA900757D08 /* Model */,
 				6BD6F4C92890224900F2E325 /* Assets.xcassets */,
-				6BD6F4CE2890224900F2E325 /* Persistence.swift */,
 				6BD6F4D02890224900F2E325 /* Payback_assignment.xcdatamodeld */,
 				6BD6F4CB2890224900F2E325 /* Preview Content */,
 			);
@@ -263,10 +319,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6B12BA8E289043A600757D08 /* Reachbility.swift in Sources */,
+				6B12BA882890425600757D08 /* PayBackAPI.swift in Sources */,
+				6B12BA8C2890438E00757D08 /* Request.swift in Sources */,
+				6B12BA8A2890428900757D08 /* Routes.swift in Sources */,
 				6BD6F4CF2890224900F2E325 /* Persistence.swift in Sources */,
+				6B12BA90289043EF00757D08 /* RequestManager.swift in Sources */,
 				6BD6F4C82890224900F2E325 /* ContentView.swift in Sources */,
+				6B12BA9228906D9000757D08 /* ContentViewModel.swift in Sources */,
+				6B12BA8528902CF000757D08 /* Tile.swift in Sources */,
 				6BD6F4D22890224900F2E325 /* Payback_assignment.xcdatamodeld in Sources */,
 				6BD6F4C62890224900F2E325 /* Payback_assignmentApp.swift in Sources */,
+				6B12BA94289070C400757D08 /* TileList.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
