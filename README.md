@@ -2,11 +2,11 @@
 Create an iOS App to display a feed similar to the feed we have in our current PAYBACK App. The feed is the entry point of our PAYBACK App where we aggregate data of all features we have from the app and display them to the users.
 
 ## Functional Requirements
-- shopping_list : There is a text field where users can enter a shopping list item and after that, the item should be persisted and displayed as a list below the text field. ✅
-- image : Display the image. ✅
-- video : play the video when users tap on the tile. ✅
-- website : display the website in a web view. ✅
-- the headline & subline should only be shown when available ✅
+- Shopping_list : There is a text field where users can enter a shopping list item and after that, the item should be persisted and displayed as a list below the text field. ✅
+- Image : Display the image. ✅
+- Video : play the video when users tap on the tile. ✅
+- Website : display the website in a web view. ✅
+- The headline & subline should only be shown when available ✅
 - Load data only once a day (write the update time as specified on the service web-site) and store it for offline use. If data can't be loaded but offline data is available from a previous day, use that cached data. ✅
 
 ## Layout
