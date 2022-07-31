@@ -8,8 +8,7 @@
 import Foundation
 
 class ContentViewModel: ObservableObject {
-    private(set) var tiles = [Tile]()
-    var dataUpdated: (() -> Void)?
+    @Published private(set) var tiles = [Tile]()
     /**
      Fetch results
      
@@ -24,7 +23,6 @@ class ContentViewModel: ObservableObject {
             case .Success(let results):
                 if let result = results {
                     self.tiles = result.tiles
-                    self.dataUpdated?()
                 }
             case .Failure(let message):
                 print(message)

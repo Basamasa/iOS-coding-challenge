@@ -15,6 +15,12 @@
 		6B12BA90289043EF00757D08 /* RequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B12BA8F289043EF00757D08 /* RequestManager.swift */; };
 		6B12BA9228906D9000757D08 /* ContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B12BA9128906D9000757D08 /* ContentViewModel.swift */; };
 		6B12BA94289070C400757D08 /* TileList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B12BA93289070C400757D08 /* TileList.swift */; };
+		6B12BA962891D9D200757D08 /* TileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B12BA952891D9D200757D08 /* TileView.swift */; };
+		6B12BA992891DE5800757D08 /* View+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B12BA982891DE5800757D08 /* View+Extensions.swift */; };
+		6B72C800289598D300197B06 /* TileDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B72C7FF289598D300197B06 /* TileDetailView.swift */; };
+		6B72C80228959F2C00197B06 /* TileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B72C80128959F2C00197B06 /* TileViewModel.swift */; };
+		6B72C80428969C6500197B06 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B72C80328969C6500197B06 /* WebView.swift */; };
+		6B72C80628969CA700197B06 /* WebViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B72C80528969CA700197B06 /* WebViewModel.swift */; };
 		6BD6F4C62890224900F2E325 /* Payback_assignmentApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BD6F4C52890224900F2E325 /* Payback_assignmentApp.swift */; };
 		6BD6F4C82890224900F2E325 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BD6F4C72890224900F2E325 /* ContentView.swift */; };
 		6BD6F4CA2890224900F2E325 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6BD6F4C92890224900F2E325 /* Assets.xcassets */; };
@@ -52,6 +58,12 @@
 		6B12BA8F289043EF00757D08 /* RequestManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestManager.swift; sourceTree = "<group>"; };
 		6B12BA9128906D9000757D08 /* ContentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewModel.swift; sourceTree = "<group>"; };
 		6B12BA93289070C400757D08 /* TileList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TileList.swift; sourceTree = "<group>"; };
+		6B12BA952891D9D200757D08 /* TileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TileView.swift; sourceTree = "<group>"; };
+		6B12BA982891DE5800757D08 /* View+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extensions.swift"; sourceTree = "<group>"; };
+		6B72C7FF289598D300197B06 /* TileDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TileDetailView.swift; sourceTree = "<group>"; };
+		6B72C80128959F2C00197B06 /* TileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TileViewModel.swift; sourceTree = "<group>"; };
+		6B72C80328969C6500197B06 /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
+		6B72C80528969CA700197B06 /* WebViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewModel.swift; sourceTree = "<group>"; };
 		6BD6F4C22890224900F2E325 /* Payback_assignment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Payback_assignment.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6BD6F4C52890224900F2E325 /* Payback_assignmentApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Payback_assignmentApp.swift; sourceTree = "<group>"; };
 		6BD6F4C72890224900F2E325 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -104,6 +116,8 @@
 			isa = PBXGroup;
 			children = (
 				6B12BA9128906D9000757D08 /* ContentViewModel.swift */,
+				6B72C80128959F2C00197B06 /* TileViewModel.swift */,
+				6B72C80528969CA700197B06 /* WebViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -112,6 +126,9 @@
 			isa = PBXGroup;
 			children = (
 				6BD6F4C72890224900F2E325 /* ContentView.swift */,
+				6B12BA952891D9D200757D08 /* TileView.swift */,
+				6B72C7FF289598D300197B06 /* TileDetailView.swift */,
+				6B72C80328969C6500197B06 /* WebView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -127,6 +144,14 @@
 				6BD6F4CE2890224900F2E325 /* Persistence.swift */,
 			);
 			path = Service;
+			sourceTree = "<group>";
+		};
+		6B12BA972891DE3D00757D08 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				6B12BA982891DE5800757D08 /* View+Extensions.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		6BD6F4B92890224900F2E325 = {
@@ -152,6 +177,7 @@
 		6BD6F4C42890224900F2E325 /* Payback_assignment */ = {
 			isa = PBXGroup;
 			children = (
+				6B12BA972891DE3D00757D08 /* Extensions */,
 				6BD6F4C52890224900F2E325 /* Payback_assignmentApp.swift */,
 				6B12BA86289040E600757D08 /* Service */,
 				6B12BA8328902CC800757D08 /* View */,
@@ -320,14 +346,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				6B12BA8E289043A600757D08 /* Reachbility.swift in Sources */,
+				6B72C80628969CA700197B06 /* WebViewModel.swift in Sources */,
 				6B12BA882890425600757D08 /* PayBackAPI.swift in Sources */,
+				6B72C800289598D300197B06 /* TileDetailView.swift in Sources */,
+				6B12BA962891D9D200757D08 /* TileView.swift in Sources */,
 				6B12BA8C2890438E00757D08 /* Request.swift in Sources */,
 				6B12BA8A2890428900757D08 /* Routes.swift in Sources */,
 				6BD6F4CF2890224900F2E325 /* Persistence.swift in Sources */,
 				6B12BA90289043EF00757D08 /* RequestManager.swift in Sources */,
+				6B72C80228959F2C00197B06 /* TileViewModel.swift in Sources */,
 				6BD6F4C82890224900F2E325 /* ContentView.swift in Sources */,
 				6B12BA9228906D9000757D08 /* ContentViewModel.swift in Sources */,
+				6B72C80428969C6500197B06 /* WebView.swift in Sources */,
 				6B12BA8528902CF000757D08 /* Tile.swift in Sources */,
+				6B12BA992891DE5800757D08 /* View+Extensions.swift in Sources */,
 				6BD6F4D22890224900F2E325 /* Payback_assignment.xcdatamodeld in Sources */,
 				6BD6F4C62890224900F2E325 /* Payback_assignmentApp.swift in Sources */,
 				6B12BA94289070C400757D08 /* TileList.swift in Sources */,

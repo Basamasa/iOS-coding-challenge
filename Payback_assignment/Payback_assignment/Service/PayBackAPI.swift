@@ -58,6 +58,7 @@ final class PayBackAPI {
             return nil
         }
     }
+}
 
 extension Data
 {

@@ -20,39 +20,23 @@ struct ContentView: View {
     @State var text: String = ""
     
     @StateObject var viewModel = ContentViewModel()
-    
+
     var body: some View {
-        VStack{
+        VStack {
             NavigationView {
-                List {
-                    ForEach(items) { item in
-                        NavigationLink {
-                            Text("Item at \(item.timestamp!, formatter: itemFormatter)")
-                        } label: {
-                            Text(item.timestamp!, formatter: itemFormatter)
-                        }
+                ScrollView {
+                    ForEach(viewModel.tiles, id: \.self) { tile in
+                        TileView(viewModel: TileViewModel(tile: tile))
                     }
                     .onDelete(perform: deleteItems)
+                    .navigationTitle("PayBack")
                 }
-                .navigationTitle("PayBack")
-//
-//                .toolbar {
-//                    ToolbarItem(placement: .navigationBarTrailing) {
-//                        EditButton()
-//                    }
-//                    ToolbarItem {
-//                        Button(action: addItem) {
-//                            Label("Add Item", systemImage: "plus")
-//                        }
-//                    }
-//                }
-                Text("Select an item")
             }
         }
         .task {
             await viewModel.fetchResults()
         }
-        .searchable(text: $text, prompt: "Look for something")
+        .environmentObject(viewModel)
 
     }
 
@@ -64,8 +48,6 @@ struct ContentView: View {
             do {
                 try viewContext.save()
             } catch {
-                // Replace this implementation with code to handle the error appropriately.
-                // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
                 let nsError = error as NSError
                 fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
             }

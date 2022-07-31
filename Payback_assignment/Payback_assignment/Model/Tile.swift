@@ -7,10 +7,17 @@
 
 import Foundation
 
-struct Tile: Codable {
-    let name: String
+struct Tile: Codable, Hashable {    
+    let name: TileStyle
     let headline: String
     let subline: String?
     let data: String?
     let score: Int
+}
+
+enum TileStyle: String, Codable {
+    case image = "image"
+    case video = "video"
+    case website = "website"
+    case shopping_list = "shopping_list"
 }
