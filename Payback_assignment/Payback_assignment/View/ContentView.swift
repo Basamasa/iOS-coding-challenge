@@ -9,26 +9,20 @@ import SwiftUI
 import CoreData
 
 struct ContentView: View {
-    @Environment(\.managedObjectContext) private var viewContext
+    @FetchRequest(sortDescriptors: [NSSortDescriptor(keyPath: \Item.score, ascending: false)], animation: .default) var items: FetchedResults<Item>
+    @ObservedObject var viewModel: ContentViewModel
 
-    @FetchRequest(
-        sortDescriptors: [NSSortDescriptor(keyPath: \Item.timestamp, ascending: true)],
-        animation: .default)
+    init(viewContext: NSManagedObjectContext) {
+        self.viewModel = ContentViewModel(viewContext: viewContext)
+    }
     
-    private var items: FetchedResults<Item>
-
-    @State var text: String = ""
-    
-    @StateObject var viewModel = ContentViewModel()
-
     var body: some View {
         VStack {
             NavigationView {
                 ScrollView {
-                    ForEach(viewModel.tiles, id: \.self) { tile in
-                        TileView(viewModel: TileViewModel(tile: tile))
+                    ForEach(items, id: \.self) { item in
+                        TileView(viewModel: TileViewModel(tile: Tile(item: item)))
                     }
-                    .onDelete(perform: deleteItems)
                     .navigationTitle("PayBack")
                 }
             }
@@ -36,47 +30,11 @@ struct ContentView: View {
         .task {
             await viewModel.fetchResults()
         }
-        .environmentObject(viewModel)
-
-    }
-
-    private func addItem() {
-        withAnimation {
-            let newItem = Item(context: viewContext)
-            newItem.timestamp = Date() + 1
-
-            do {
-                try viewContext.save()
-            } catch {
-                let nsError = error as NSError
-                fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
-            }
-        }
-    }
-
-    private func deleteItems(offsets: IndexSet) {
-        withAnimation {
-            offsets.map { items[$0] }.forEach(viewContext.delete)
-
-            do {
-                try viewContext.save()
-            } catch {
-                let nsError = error as NSError
-                fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
-            }
-        }
     }
 }
 
-private let itemFormatter: DateFormatter = {
-    let formatter = DateFormatter()
-    formatter.dateStyle = .short
-    formatter.timeStyle = .medium
-    return formatter
-}()
-
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView().environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
+        ContentView(viewContext: PersistenceController.shared.container.viewContext).environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
     }
 }

@@ -9,46 +9,56 @@ import SwiftUI
 import AVKit
 
 struct TileDetailView: View {
-    var tile: Tile
+    @StateObject var viewModel: TileViewModel
+    
+    /// Headline
+    var headLine: some View {
+        HStack {
+            Spacer()
+            Text(viewModel.tile.headline)
+                .font(.system(size: 60))
+                .foregroundColor(Color.blue)
+                .bold()
+            Spacer()
+        }
+        .padding()
+    }
+    
+    /// Show subline view
+    var subLine: some View {
+        HStack {
+            Spacer()
+            if viewModel.tile.name == .website, let data = viewModel.tile.data  {
+                Text(.init("Link: \(data)"))
+            } else {
+                Text(viewModel.tile.subline ?? "")
+                    .foregroundColor(Color.blue)
+            }
+            Spacer()
+        }
+        .padding()
+    }
     
     var body: some View {
-        VStack(alignment: .leading){
-            HStack {
-                Text(tile.headline)
-                    .foregroundColor(Color.blue)
-                    .bold()
-                Spacer()
+        VStack(){
+            headLine
+            if viewModel.tile.name == .image, let data = viewModel.tile.data {
+                TileImageView(data: data)
+            } else if viewModel.tile.name == .video, let data = viewModel.tile.data {
+                TileVideoView(data: data)
+            } else if viewModel.tile.name == .website, let data = viewModel.tile.data {
+                TileWebsiteView(image: viewModel.image, model: WebViewModel(urlName: data), isDetailView: true)
+            } else if viewModel.tile.name == .shopping_list {
+                TileTextFieldView(text: $viewModel.text)
             }
-            .padding()
-            
-            if tile.name == .image, let data = tile.data {
-                NavigationLink {
-                    Text("Details")
-                } label: {
-                    AsyncImage(url: URL(string: data))
-                        .frame(alignment: .center)
-                }
-            } else if tile.name == .video, let data = tile.data {
-                VideoPlayer(player: AVPlayer(url:  URL(string: data)!))
-                    .frame(height: 400)
-            } else if tile.name == .website, let data = tile.data   {
-                Text(.init("This is a link [\(tile.name)](\(data)"))
-            } else if tile.name == .shopping_list {
-                
-            }
-            HStack {
-                Text(tile.subline ?? "")
-                    .foregroundColor(Color.blue)
-                    .opacity(0.8)
-                Spacer()
-            }
-            .padding()
+            subLine
+            Spacer()
         }
     }
 }
 
 struct TileDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        TileDetailView(tile: Tile(name: .image, headline: "Image", subline: "Image name", data: nil, score: 1))
+        TileDetailView(viewModel: TileViewModel(tile: Tile(item: Item())))
     }
 }

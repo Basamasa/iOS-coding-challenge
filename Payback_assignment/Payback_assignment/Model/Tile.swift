@@ -13,6 +13,14 @@ struct Tile: Codable, Hashable {
     let subline: String?
     let data: String?
     let score: Int
+    
+    init(item: Item) {
+        self.name = TileStyle(rawValue: item.name!)!
+        self.headline = item.headline ?? ""
+        self.subline = item.subline
+        self.data = item.data
+        self.score = Int(item.score)
+    }
 }
 
 enum TileStyle: String, Codable {

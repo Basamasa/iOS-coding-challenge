@@ -7,14 +7,13 @@
 
 import WebKit
 
-class WebViewModel: ObservableObject {
+final class WebViewModel: ObservableObject {
     let webView: WKWebView
     let url: URL
     
-    init() {
+    init(urlName: String) {
         webView = WKWebView(frame: .zero)
-        url = URL(string: "https://benoitpasquier.com")!
-
+        url = URL(string: urlName)!
         loadUrl()
     }
     

@@ -9,21 +9,18 @@ import UIKit
 import LinkPresentation
 import Combine
 
-class TileViewModel : ObservableObject {
+final class TileViewModel : ObservableObject {
     let metadataProvider = LPMetadataProvider()
-    
     @Published var metadata: LPLinkMetadata?
     @Published var image: UIImage?
-    
     var tile: Tile
-    private static let userDefaultTextKey = "textKey"
-    @Published var text = UserDefaults.standard.string(forKey: TileViewModel.userDefaultTextKey) ?? ""
+    @Published var text = ""
     private var canc: AnyCancellable!
     
     init(tile: Tile) {
         self.tile = tile
-        canc = $text.debounce(for: 0.2, scheduler: DispatchQueue.main).sink { newText in
-            UserDefaults.standard.set(newText, forKey: TileViewModel.userDefaultTextKey)
+        canc = $text.debounce(for: 1, scheduler: DispatchQueue.main).sink { newText in
+            HistorySearch.insertHistory(text: newText)
         }
         guard tile.name == .website else {return}
         guard let data = tile.data else {return}
@@ -31,7 +28,7 @@ class TileViewModel : ObservableObject {
         
         metadataProvider.startFetchingMetadata(for: url) { (metadata, error) in
             guard error == nil else {
-                assertionFailure("Error")
+                print("Error")
                 return
             }
             DispatchQueue.main.async {
