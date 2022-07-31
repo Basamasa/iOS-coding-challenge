@@ -13,9 +13,13 @@ final class PersistenceController: ObservableObject {
     static var preview: PersistenceController = {
         let result = PersistenceController(inMemory: true)
         let viewContext = result.container.viewContext
-        for _ in 0..<10 {
+        for _ in 0..<3 {
             let newItem = Item(context: viewContext)
-//            newItem.timestamp = Date()
+            newItem.score = 1
+            newItem.name = "Google"
+            newItem.headline = "Google"
+            newItem.subline = "www.google.com"
+            newItem.data = "www.google.com"
         }
         do {
             try viewContext.save()

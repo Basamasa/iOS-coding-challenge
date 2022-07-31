@@ -11,7 +11,7 @@ import AVKit
 struct TileView: View {
     @StateObject var viewModel: TileViewModel
     
-    /// Headline
+    /// Show headline view
     var headLine: some View {
         NavigationLink {
             TileDetailView(viewModel: viewModel)

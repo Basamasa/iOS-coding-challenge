@@ -11,7 +11,7 @@ import AVKit
 struct TileDetailView: View {
     @StateObject var viewModel: TileViewModel
     
-    /// Headline
+    /// Show headline view
     var headLine: some View {
         HStack {
             Spacer()
