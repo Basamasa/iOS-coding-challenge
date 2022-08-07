@@ -17,15 +17,17 @@ struct ContentView: View {
     }
     
     var body: some View {
-        VStack {
             NavigationView {
+                VStack {
                 ScrollView {
                     ForEach(items, id: \.self) { item in
                         TileView(viewModel: TileViewModel(tile: Tile(item: item)))
                     }
-                    .navigationTitle("PayBack")
                 }
+                .navigationTitle("PayBack")
+
             }
+            .navigationViewStyle(.stack)
         }
         .task {
             await viewModel.fetchResults()

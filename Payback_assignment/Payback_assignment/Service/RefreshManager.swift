@@ -7,7 +7,7 @@
 
 import Foundation
 
-final class RefreshManager: NSObject {
+final class RefreshManager {
 
     static let shared = RefreshManager()
     private let defaults = UserDefaults.standard

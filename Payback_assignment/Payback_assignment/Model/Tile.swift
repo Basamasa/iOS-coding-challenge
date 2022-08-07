@@ -15,7 +15,7 @@ struct Tile: Codable, Hashable {
     let score: Int
     
     init(item: Item) {
-        self.name = TileStyle(rawValue: item.name!)!
+        self.name = TileStyle(rawValue: item.name ?? "") ?? .image
         self.headline = item.headline ?? ""
         self.subline = item.subline
         self.data = item.data
