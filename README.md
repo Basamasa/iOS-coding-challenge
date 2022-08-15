@@ -1,5 +1,5 @@
 # iOS-coding-challenge
-Create an iOS App to display a feed similar to the feed we have in our current PAYBACK App. The feed is the entry point of our PAYBACK App where we aggregate data of all features we have from the app and display them to the users.
+Create an iOS App to display a feed similar to the feed
 
 ## Functional Requirements
 - Shopping_list : There is a text field where users can enter a shopping list item and after that, the item should be persisted and displayed as a list below the text field. ✅
